@@ -1,0 +1,23 @@
+.card {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    position: relative;
+    border-radius: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgb(3, 68, 106, 0.2);
+    text-align: center;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    background: #03446a;
+    color: #fff;
+}
+
+.card img {
+    max-width: 200px;
+    height: auto;
+    image-rendering: pixelated;
+}

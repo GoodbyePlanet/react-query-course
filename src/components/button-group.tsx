@@ -1,3 +1,5 @@
+import "./button-group.css";
+
 type SetIdCallback = (id: number) => number;
 type HandleSetId = (callback: SetIdCallback) => void;
 type Props = {

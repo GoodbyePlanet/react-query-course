@@ -2,6 +2,8 @@ import * as React from "react"
 import PokemonCard from "./components/pokemon-card.tsx"
 import ButtonGroup from "./components/button-group.tsx"
 
+import "./App.css"
+
 export default function App () {
   const [id, setId] = React.useState(1)
   const [pokemon, setPokemon] = React.useState(null)
@@ -34,9 +36,9 @@ export default function App () {
   }, [id])
 
   return (
-    <>
+    <div className="container">
       <PokemonCard data={pokemon} isLoading={isLoading} error={error} />
       <ButtonGroup handleSetId={setId} />
-    </>
+    </div>
   )
 }

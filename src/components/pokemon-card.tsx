@@ -1,3 +1,5 @@
+import "./pokemon-card.css";
+
 export default function PokemonCard({data, isLoading, error}: {data: any, isLoading: boolean, error: any}) {
   if (isLoading) {
     return <div className="card" />
