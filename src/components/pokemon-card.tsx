@@ -1,6 +1,25 @@
-export default function PokemonCard({data, isLoading}: {data: any, isLoading: boolean}) {
+export default function PokemonCard({data, isLoading, error}: {data: any, isLoading: boolean, error: any}) {
   if (isLoading) {
     return <div className="card" />
+  }
+
+  if (error) {
+    return (
+      <div className="card">
+        <figure>
+          <img
+            width="100px"
+            height="100px"
+            src="https://ui.dev/images/courses/pokemon-unknown.png"
+            alt="Unknown Pokemon Image"
+          />
+          <figcaption>
+            <h4>Oops.</h4>
+            <h6>{error}</h6>
+          </figcaption>
+        </figure>
+      </div>
+    )
   }
 
   return (
