@@ -12,13 +12,11 @@ interface QueryState {
 
 const defaultState: QueryState = {};
 
-// Define the type for the context value
 type QueryContextType = [
   QueryState,
   Dispatch<SetStateAction<QueryState>>
 ];
 
-// Create the context with the correct types
 export const QueryContext = React.createContext<QueryContextType>([
   defaultState,
   () => {
@@ -33,9 +31,7 @@ export function QueryProvider({children}: { children: ReactNode }) {
   );
 }
 
-// Define the custom hook to use the query
 export default function useQuery(url: string) {
-  // Use the context with the correct types
   const [state, setState] = React.useContext(QueryContext);
 
   React.useEffect(() => {
@@ -71,7 +67,6 @@ export default function useQuery(url: string) {
 
     handleFetch();
 
-    // Clean up function to set ignore flag on unmount
     return () => {
       ignore = true;
     };
