@@ -34,6 +34,35 @@ export default function Root() {
   )
 }
 
+function FortuneCookie() {
+  const { data } = useQuery({
+    queryKey: ['luckyNumber'],
+    queryFn: () => {
+      return Promise.resolve(Math.random())
+    }
+  })
+
+  if (data && data > 0.5) {
+    return <div>Today's your lucky day</div>
+  }
+
+  return <div>Better stay home today</div>
+}
+
+function LuckyNumber() {
+  const { data } = useQuery({
+    queryKey: ['luckyNumber'],
+    queryFn: () => {
+      return Promise.resolve(Math.random())
+    }
+  })
+
+  return (
+    <div>Lucky Number is: {data}</div>
+  )
+}
+
+
 // 1. Cache management
 // 2. Cache invalidation
 // 3. Auto refetching
